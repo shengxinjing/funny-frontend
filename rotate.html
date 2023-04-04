@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter 的logo旋转</title>
+  <style>
+    img{
+      width:100px;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+  </style>
+</head>
+<body>
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+  <img src="./img/doge.svg" alt="" />
+</body>
+<script>
+  const w = window.innerWidth-100
+  const h = window.innerHeight-100
+  let imgs = [...document.querySelectorAll('img')]
+  function randomImg(){
+    imgs.forEach(v=>{
+      v.style.top = Math.random()*h + 'px'
+      v.style.left = Math.random()*w + 'px'
+    })
+  }
+  randomImg()
+  
+  // 1. 监听 ↑↑↓↓←→←→BA
+  // 2. 找到可能是logo的节点
+  // 3. 转一圈
+  const keyLists = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+  function handleKeyDown(e){
+    // 键盘点击事件
+    console.log(e.keyCode)
+  }
+
+  document.addEventListener('keydown', handleKeyDown, false);
+</script>
+</html>
